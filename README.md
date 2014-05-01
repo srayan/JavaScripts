@@ -18,3 +18,16 @@ The application is coded using Javascript on a HTML based layout.
 
 As an additional feature, the application has been deployed on a server, and assigned the domain name www.ooad6359.tk.
 One can access this website through a computer, smart-phone or a tablet. Please ensure that your pop-up blocker is disabled, otherwise the resultant pop-up will be suppressed by your browser.
+
+
+################   IMPORTANT !! ################
+
+Here are the dropbox links to the image files, used in the program.
+
+https://www.dropbox.com/s/mtl1rr6seqadru0/Attendance%20report_001_2014_02_11.png
+https://www.dropbox.com/s/mlwcexsc7zisl55/Attendance%20report_001_2014_04_16.png
+https://www.dropbox.com/s/wj1mhap1s4gacyq/Attendance%20report_002_2014_03_26.png
+https://www.dropbox.com/s/uqvun5ko55cy5yx/Attendance%20report_002_2014_05_12.png
+
+Download these files and keep them in the same repository as the index.html file.
+Remember to name the files according to the naming convention used in the code
