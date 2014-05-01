@@ -1,0 +1,95 @@
+<!-- Web based project implementation for OOAD.
+Submitted by Srayan Guhathakurta-->
+
+
+<p>
+<h1 style="text-align:center;">Attendance Viewer</h1> 
+</p>
+
+
+<!--Class selection option -->
+<select id="opts" onchange="showForm()">
+    <option value="0">Select Class</option>
+    <option value="1">001</option>
+    <option value="2">002</option>
+</select>
+
+<!--Date selection based on class value = 1-->
+<div id="f1" style="display:none">
+    <form name="form1">
+        <select id="opts_date_1" onchange="showForm()">
+            <option value="0">Select Date</option>
+            <option value="1">2014-02-11</option>
+            <option value="2">2014-04-16</option>
+        </select>
+    </form>
+</div>
+
+<!--Date selection based on class value = 2-->
+<div id="f2" style="display:none">
+    <form name="form2">
+        <select id="opts_date_2" onchange="showForm()">
+            <option value="0">Select Date</option>
+            <option value="1">2014-03-26</option>
+            <option value="2">2014-05-12</option>
+        </select>
+    </form>
+</div>
+
+
+
+<script type="text/javascript">
+    function showForm() {
+        var selopt = document.getElementById("opts").value;
+
+        <!-- Class 001 is selected-->
+        if (selopt == 1) {
+            document.getElementById("f1").style.display = "block";
+            document.getElementById("f2").style.display = "none";
+
+            var selopt_date_class_1= document.getElementById("opts_date_1").value;
+            
+
+<!-- Conditional statements will pull up the necessary data based on the class-date combination in a new window -->
+
+
+            if (selopt_date_class_1 == 1) {
+             window.open('Attendance report_001_2014_02_11.png','status, location=no, width=300, height=200')
+            }
+
+
+            if (selopt_date_class_1 == 2) {
+                window.open('Attendance report_001_2014_04_16.png','status, width=300, height=200')
+            }
+        }
+
+        <!-- Class 002 is selected-->
+        if (selopt == 2) {
+            document.getElementById("f2").style.display = "block";
+            document.getElementById("f1").style.display = "none";
+
+            var selopt_date_class_2 = document.getElementById("opts_date_2").value;
+
+
+<!-- Conditional statements will pull up the necessary data based on the class-date combination in a new window -->
+
+
+            if (selopt_date_class_2 == 1) {
+                window.open('Attendance report_002_2014_03_26.png','status, width=300, height=200') 
+            }
+            if (selopt_date_class_2 == 2) {
+                window.open('Attendance report_002_2014_05_12.png','status, width=300, height=200')
+            }
+        }
+
+        <!-- No class is selected-->
+        if (selopt == 0) {
+            document.getElementById("f2").style.display = "none";
+            document.getElementById("f1").style.display = "none";
+        }
+    }
+
+</script>
+
+<br>
+
