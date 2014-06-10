@@ -1,60 +1,33 @@
-<script type = "text/javascript">
-
-// Note: Like all Javascript password scripts, this is hopelessly insecure as the user can see 
-//the valid usernames/passwords and the redirect url simply with View Source.  
-// And the user can obtain another three tries simply by refreshing the page.  
-//So do not use for anything serious!
-
-var count = 2;
-function validate() {
-var un = document.myform.username.value;
-var pw = document.myform.pword.value;
-var valid = false;
-
-var unArray = ["Philip", "George", "Sarah", "Michael"];  // as many as you like - no comma after final entry
-var pwArray = ["Password1", "Password2", "Password3", "Password4"];  // the corresponding passwords;
-
-for (var i=0; i <unArray.length; i++) {
-if ((un == unArray[i]) && (pw == pwArray[i])) {
-valid = true;
-break;
-}
-}
-
-if (valid) {
-alert ("Login was successful");
-window.location = "http://www.google.com";
-return false;
-}
-
-var t = " tries";
-if (count == 1) {t = " try"}
-
-if (count >= 1) {
-alert ("Invalid username and/or password.  You have " + count + t + " left.");
-document.myform.username.value = "";
-document.myform.pword.value = "";
-setTimeout("document.myform.username.focus()", 25);
-setTimeout("document.myform.username.select()", 25);
-count --;
-}
-
-else {
-alert ("Still incorrect! You have no more tries left!");
-document.myform.username.value = "No more tries allowed!";
-document.myform.pword.value = "";
-document.myform.username.disabled = true;
-document.myform.pword.disabled = true;
-return false;
-}
-
-}
-
-</script>
-
-<form name = "myform">
-<p>ENTER USER NAME <input type="text" name="username"> ENTER PASSWORD <input type="password" name="pword">
-<input type="button" value="Check In" name="Submit" onclick= "validate()">
-</p>
-
+<html>
+<head>
+<title>
+Login page
+</title>
+</head>
+<body>
+<h1 style="font-family:Comic Sans Ms;text-align="center";font-size:20pt;
+color:#00FF00;>
+Simple Login Page
+</h1>
+<form name="login">
+Username<input type="text" name="userid"/>
+Password<input type="password" name="pswrd"/>
+<input type="button" onclick="check(this.form)" value="Login"/>
+<input type="reset" value="Cancel"/>
 </form>
+<script language="javascript">
+function check(form)/*function to check userid & password*/
+{
+/*the following code checkes whether the entered userid and password are matching*/
+if(form.userid.value == "myuserid" && form.pswrd.value == "mypswrd")
+{
+window.open('target.html')/*opens the target page while Id & password matches*/
+}
+else
+{
+alert("Error Password or Username")/*displays error message*/
+}
+}
+</script>
+</body>
+</html>
